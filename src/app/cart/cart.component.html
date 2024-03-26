@@ -1,0 +1,58 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <div class="p-3" *ngIf="products.length==0">
+                <img class="img-fluid "
+                    src="https://i.postimg.cc/wMJVHzQZ/pngtree-online-shopping-design-concept-the-couple-is-collecting-bonuses-and-prizes-png-image-6337627.png"
+                    alt="" height="400px" width="600px">
+                <h2 class="text-danger">Your Cart is Now Empty</h2>
+                <button class="btn btn-success">Add More</button>
+            </div>
+
+            <div class=" col-lg-12 p-3 text-center">
+
+                <div class="row" *ngIf="products.length>0">
+                    <div class="col-lg-8" >
+                        <div *ngFor="let product of products" class="card mb-3" style="max-width: 540px;">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img [src]="product.image" class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{product.title}}</h5>
+                                        <p class="card-text fw-bold">${{product.category}}</p>
+
+                                        <p class="card-text fw-bold">${{product.price}}</p>
+                                        <span class="fw-bold">quantity:</span> <button (click)="decrement(product._id)" class="btn">-</button><input class="text-center"
+                                            type="text" [value]="product.quantity" style="width: 30px;" readonly><button (click)="increment(product._id)"
+                                            class="btn">+</button><br>
+                                        <button (click)="removeCart(product._id)" class="btn"><i class="fa-solid fa-trash"
+                                                style="color: #f01919;"></i></button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-4">
+
+                        <div class="border shadow rounded p-5">
+
+                            <h2>Total Price:{{totalPrice}}</h2> <button (click)="checkOut()">CheckOut</button>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>

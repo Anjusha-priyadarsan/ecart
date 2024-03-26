@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-lg header text-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand text-light fw-bold fs-3"  href="#"> <img src="https://i.postimg.cc/qB2sQQR9/png-clipart-e-commerce-shopify-logo-web-design-magento-shopping-cart-grass-business-thumbnail-remove.png" alt="" width="70px">  S <span class="text-warning fw-bold fs-3">h</span> o <span class="text-warning fw-bold fs-3">p</span>  y</a>
+
+    <div class="collapse navbar-collapse search" id="navbarTogglerDemo02">
+      <form class="d-flex" role="search">
+        <input [(ngModel)]="sData" (keyup)="sendData($event)" class="form-control w-auto" type="search" placeholder="Search" aria-label="Search" name="search" id="s">
+        <!-- <button class="btn btn-outline-light" type="submit">Search</button> -->
+      </form>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/whislist"><i class="fa-solid fa-heart fa-lg" style="color: #9a0e0e;"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " routerLink="/cart"><i class="fa badge fa-lg " style="color: yellow;">&#xf07a;<sup  class="bg-success " style="border-radius: 50%;padding: 2px;">{{cartCount}}</sup></i></a>
+        </li>
+        <li *ngIf="!login" class="nav-item">
+            <button routerLink="/login" class="btn btn-outline-warning log" type="submit"><i class="fa-solid fa-user " style="color: #038c1e;"></i> &nbsp;&nbsp;Login</button>
+        </li>
+        <li *ngIf="login" class="nav-item">
+          <button (click)="logout()"  routerLink="/login" class="btn btn-outline-warning log" type="submit"><i class="fa-solid fa-user " style="color: #038c1e;"></i> &nbsp;&nbsp;Logout</button>
+
+      </li>
+        
+      </ul>
+      <!-- <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form> -->
+    </div>
+  </div>
+</nav>
+
+<!-- <nav class="navbar navbar-expand-lg header text-light">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand text-light fw-bold fs-3"  href="#"> <img src="https://i.postimg.cc/qB2sQQR9/png-clipart-e-commerce-shopify-logo-web-design-magento-shopping-cart-grass-business-thumbnail-remove.png" alt="" width="70px">  S <span class="text-warning fw-bold fs-3">h</span> o <span class="text-warning fw-bold fs-3">p</span>  y</a>
+      <div class="collapse navbar-collapse search "  >
+        
+        <form class="d-flex" role="search">
+            <input [(ngModel)]="sData" (keyup)="sendData($event)" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search" id="s">
+            <button class="btn btn-outline-light" type="submit">Search</button>
+          </form>
+
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" routerLink="whislist"><i class="fa-solid fa-heart fa-lg" style="color: #9a0e0e;"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa badge fa-lg " value=0 style="color: yellow;">&#xf07a;</i></a>
+            </li>
+            <li *ngIf="!login" class="nav-item">
+                <button routerLink="/login" class="btn btn-outline-warning log" type="submit"><i class="fa-solid fa-user " style="color: #038c1e;"></i> &nbsp;&nbsp;Login</button>
+            </li>
+            <li *ngIf="login" class="nav-item">
+              <button  routerLink="/login" class="btn btn-outline-warning log" type="submit"><i class="fa-solid fa-user " style="color: #038c1e;"></i> &nbsp;&nbsp;Logout</button>
+
+          </li>
+            
+          </ul>
+       
+      </div>
+    </div>
+  </nav> -->

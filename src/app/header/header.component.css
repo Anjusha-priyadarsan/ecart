@@ -1,0 +1,45 @@
+.header{
+    background-color: orangered;
+}
+.search{
+    margin-left: 300px;
+    
+}
+/* .badge:after{
+    content:attr(value);
+    font-size:12px;
+    color: #fff;
+    background:green;
+    border-radius:50%;
+    padding: 0 5px;
+    position:relative;
+    left:-8px;
+    top:-10px;
+    opacity:0.1;
+} */
+ul{
+    margin-left: 150px;
+}
+.log{
+    margin-left: 140px;
+}
+
+@media (max-width: 800px) {
+    .search {
+        margin-left: 30px;
+        margin-top: 10px;
+
+    }
+    ul{   
+         margin-left: 30px;
+
+        
+    }
+    img{
+        width: 35px;
+    }
+    .log{
+        margin-left: 0px;
+
+    }
+  }

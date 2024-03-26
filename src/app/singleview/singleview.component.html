@@ -1,0 +1,29 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row shadow p-5">
+        <div class="col-lg-4">
+            <img class="img-fluid" [src]="singleProduct.image" alt="" height="400px">
+
+            
+        </div>
+        <div class="col-lg-8 text-center">
+
+            <h2>
+                {{singleProduct.title}}</h2>
+                <span class="mt-4" [ngClass]="singleProduct.rating.rate>=4?'c1':'c2'"><span ><span class="text-light fw-bold">{{singleProduct.rating.rate}} </span><i class="fa-solid fa-star "></i>
+                </span></span>&nbsp;&nbsp;<span >{{singleProduct.rating.count}}&nbsp;Ratings</span>
+                <h3 class="mt-4">₹ &nbsp;{{singleProduct.price}}</h3>
+                <p class="mt-3">We recommend you buy a size larger. Package contains: 1 kurta. Dry clean. Viscose Rayon. No Darts. Product Code: 466696985004. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed id ratione, eius perferendis corporis nulla quidem velit voluptas consequuntur officia aperiam molestias quae nemo nam distinctio, nostrum maxime odit quibusdam?</p>
+                <h6 class="mt-2">Category:{{singleProduct.category}}</h6>
+                
+                <div class="d-flex justify-content-between mt-5">
+                    <button (click)="addtoCart(singleProduct)" type="button" class="btn btn-outline-success w-25">Add to &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>   
+                    <button (click)="addtoWish(singleProduct.id,singleProduct.title,singleProduct.price,singleProduct.description,singleProduct.category,singleProduct.image,singleProduct.rating)" type="button" class="btn btn-outline-danger w-25">Add to &nbsp; <i class="fa-solid fa-heart-circle-plus"></i></button>            
+    
+                </div>
+
+        </div>
+
+    </div>
+
+</div>

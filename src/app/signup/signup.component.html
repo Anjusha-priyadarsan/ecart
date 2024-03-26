@@ -1,0 +1,53 @@
+<app-header></app-header>
+
+<div class="container">
+  <a href="" style="text-decoration: none;color: green;">Back to Home</a>
+  <div class="row shadow p-5">
+    <div class="col-lg-6 text-center ">
+      <img class="img-fluid"
+        src="https://i.postimg.cc/90d3hq7R/png-transparent-shopping-centre-clothing-graphy-woman-shopping-miscellaneous-tshirt-retail-removebg.png"
+        height="400px" alt="">
+
+    </div>
+      <div class="col-lg-6 p-1">
+        <form (ngSubmit)="signup()" [formGroup]="signupFormModel">
+
+        <h3 class="text-center text-danger">Sign Up</h3>
+  
+  
+        <div class="form-floating mb-2">
+          <input type="text" class="form-control" id="floatingInput" name="uname" placeholder="name" formControlName="username">
+          <label for="floatingInput">User Name</label>
+        </div>
+         <!-- error message -->
+         <div *ngIf="signupFormModel.get('username')?.errors&&signupFormModel.get('username')?.touched">
+          <p class="text-danger">Please enter a valid username</p>
+        </div>
+        
+  
+        <div class="form-floating mt-3">
+          <input type="text" class="form-control" id="em1" name="emal" placeholder="email" formControlName="email">
+          <label for="floatingPassword">email</label>
+        </div>
+        <!-- error message -->
+        <div *ngIf="signupFormModel.get('email')?.errors&&signupFormModel.get('email')?.touched">
+          <p class="text-danger">Please enter a valid email</p>
+        </div>
+  
+        <div class="form-floating mt-3">
+          <input type="password" class="form-control" id="pwd1" name="pswd" placeholder="Password" formControlName="pwd">
+          <label for="floatingPassword">Password</label>
+        </div>
+         <!-- error message -->
+         <div *ngIf="signupFormModel.get('pwd')?.errors&&signupFormModel.get('pwd')?.touched">
+          <p class="text-danger">Password includes only letters,number and space</p>
+        </div>
+        <button type="submit" class="btn btn-outline-success w-100 mt-3">Register</button>
+        <p class="mt-3">already have an account? &nbsp;<a routerLink="/login">Login</a></p>
+      </form>
+      </div>
+   
+
+  </div>
+
+</div>
